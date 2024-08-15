@@ -1,0 +1,40 @@
+{
+	"appEnv": "development",
+    "appName": "article-service",
+    "appPort": "3000",
+    "appTimezone": "Asia/Jakarta",
+    "appValidationKey": "NidzamSvc2023",
+    "appSecretKey": "NidzamSvc2023",
+    "jwtSecretKey": "",
+
+    "TIMEZONE": "Asia/Jakarta",
+  
+    "GOOSE_DBSTRING":"sql12726118:WT2cHJ8sx4@tcp(sql12.freesqldatabase.com:3306)/sql12726118?parseTime=true",
+    "GOOSE_DRIVER":"mysql",
+
+ 
+
+    "dbMysqlMasterDriver": "mysql",
+    "dbMysqlMasterHost": "sql12.freesqldatabase.com",
+    "dbMysqlMasterPort": "3306",
+    "dbMysqlMasterDbName": "sql12726118",
+    "dbMysqlMasterUser": "sql12726118",
+    "dbMysqlMasterPassword": "WT2cHJ8sx4",
+    "dbMysqlMasterSslMode": "disable",
+    "dbMysqlMasterMaxOpenConnections": 10,
+    "dbMysqlMasterMaxLifeTimeConnection": 60,
+    "dbMysqlMasterMaxIdleConnections": 10,
+    "dbMysqlMasterMaxIdleTimeConnection": 30,
+
+    "dbMysqlSlaveDriver": "mysql",
+  "dbMysqlSlaveHost": "sql12.freesqldatabase.com",
+  "dbMysqlSlavePort": "3306",
+  "dbMysqlSlaveDbName": "sql12726118",
+  "dbMysqlSlaveUser": "sql12726118",
+  "dbMysqlSlavePassword": "WT2cHJ8sx4",
+  "dbMysqlSlaveSslMode": "disable",
+  "dbMysqlSlaveMaxOpenConnections": 10,
+  "dbMysqlSlaveMaxLifeTimeConnection": 60,
+  "dbMysqlSlaveMaxIdleConnections": 10,
+  "dbMysqlSlaveMaxIdleTimeConnection": 30
+}

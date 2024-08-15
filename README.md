@@ -1,0 +1,1 @@
+# migration with goose script =    GOOSE_DRIVER=mysql GOOSE_DBSTRING="sql12726118:WT2cHJ8sx4@tcp(sql12.freesqldatabase.com:3306)/sql12726118?parseTime=true" ./goose up
