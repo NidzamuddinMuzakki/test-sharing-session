@@ -3,7 +3,7 @@ package registry
 import (
 	"sync"
 
-	"github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/middleware/gin/panic_recovery"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/middleware/gin/panic_recovery"
 
 	"github.com/go-playground/validator/v10"
 )

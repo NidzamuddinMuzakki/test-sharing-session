@@ -3,10 +3,10 @@ package health
 import (
 	"net/http"
 
-	service "github.com/NidzamuddinMuzakki/test-sharing-session/service/health"
+	service "github.com/NidzamuddinMuzakki/test-sharing-vision/service/health"
 
-	common "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/registry"
-	commonModel "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/response/model"
+	common "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/registry"
+	commonModel "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/response/model"
 
 	"github.com/gin-gonic/gin"
 )

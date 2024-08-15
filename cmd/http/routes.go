@@ -3,10 +3,10 @@ package http
 import (
 	"net/http"
 
-	commonMiddleware "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/middleware/gin"
-	common "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/registry"
-	commonResponse "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/response"
-	delivery "github.com/NidzamuddinMuzakki/test-sharing-session/handler"
+	commonMiddleware "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/middleware/gin"
+	common "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/registry"
+	commonResponse "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/response"
+	delivery "github.com/NidzamuddinMuzakki/test-sharing-vision/handler"
 	"github.com/gin-gonic/gin"
 	// ginSwagger "github.com/swaggo/gin-swagger"
 )
@@ -51,7 +51,6 @@ func NewRouter(
 // @name Authorization
 
 func (r *router) Register() *gin.Engine {
-
 	// Middleware
 	r.engine.Use(
 		commonMiddleware.CORS(),
@@ -87,6 +86,12 @@ func (r *router) Register() *gin.Engine {
 func (r *router) v1() {
 
 	v1 := r.engine.Group("/v1")
+
 	v1.POST("/article", r.delivery.GetPosts().CreatePosts)
+	v1.GET("/article/:limit/:offset", r.delivery.GetPosts().GetListPosts)
+	v1.GET("/article/detail/:id", r.delivery.GetPosts().GetDetailPosts)
+	v1.GET("/article/log/:id", r.delivery.GetPosts().GetListLogPosts)
+	v1.DELETE("/article/:id", r.delivery.GetPosts().DeletePosts)
+	v1.PUT("/article/:id", r.delivery.GetPosts().UpdatePosts)
 
 }

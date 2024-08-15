@@ -5,8 +5,8 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/NidzamuddinMuzakki/test-sharing-session/common"
-	constants "github.com/NidzamuddinMuzakki/test-sharing-session/common/constant"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/common"
+	constants "github.com/NidzamuddinMuzakki/test-sharing-vision/common/constant"
 )
 
 type Response struct {

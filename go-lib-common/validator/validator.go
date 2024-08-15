@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"strings"
 
-	modelResp "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/response/model"
+	modelResp "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/response/model"
 	"github.com/go-playground/locales/en"
 	ut "github.com/go-playground/universal-translator"
 	"github.com/go-playground/validator/v10"

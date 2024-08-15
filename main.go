@@ -5,33 +5,34 @@ import (
 	"time"
 	_ "time/tzdata"
 
-	"github.com/NidzamuddinMuzakki/test-sharing-session/repository"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/common/util"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/repository"
 
-	"github.com/NidzamuddinMuzakki/test-sharing-session/config"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/config"
 
-	"github.com/NidzamuddinMuzakki/test-sharing-session/service"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/service"
 	// Import services here
-	serviceHealth "github.com/NidzamuddinMuzakki/test-sharing-session/service/health"
+	serviceHealth "github.com/NidzamuddinMuzakki/test-sharing-vision/service/health"
 
 	// Import deliveries here
 
-	httpDelivery "github.com/NidzamuddinMuzakki/test-sharing-session/handler"
-	httpDeliveryHealth "github.com/NidzamuddinMuzakki/test-sharing-session/handler/health"
+	httpDelivery "github.com/NidzamuddinMuzakki/test-sharing-vision/handler"
+	httpDeliveryHealth "github.com/NidzamuddinMuzakki/test-sharing-vision/handler/health"
 
 	// Import cmd here
-	cmdHttp "github.com/NidzamuddinMuzakki/test-sharing-session/cmd/http"
+	cmdHttp "github.com/NidzamuddinMuzakki/test-sharing-vision/cmd/http"
 
 	// Import common lib here
 
-	commonDs "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/data_source"
-	"github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/logger"
+	commonDs "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/data_source"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/logger"
 
-	commonPanicRecover "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/middleware/gin/panic_recovery"
+	commonPanicRecover "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/middleware/gin/panic_recovery"
 
-	commonRegistry "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/registry"
+	commonRegistry "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/registry"
 
-	commonTime "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/time"
-	commonValidator "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/validator"
+	commonTime "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/time"
+	commonValidator "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/validator"
 
 	// Import third parties here
 	_ "github.com/joho/godotenv/autoload"
@@ -116,9 +117,10 @@ func main() {
 	// End Clients //
 
 	// Start Repositories //
+	masterUtilTx := util.NewTransactionRunner(master)
 	PostsRepository := repository.NewPostsRepository(common, master, slave)
 
-	repoRegistry := repository.NewRegistryRepository(PostsRepository)
+	repoRegistry := repository.NewRegistryRepository(masterUtilTx, PostsRepository)
 	// End Repositories //
 
 	// Start Services //

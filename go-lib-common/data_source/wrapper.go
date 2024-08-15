@@ -2,6 +2,7 @@ package data_source
 
 import (
 	"context"
+	"fmt"
 
 	"github.com/jmoiron/sqlx"
 )
@@ -9,6 +10,7 @@ import (
 // Exec wrapping multiple queries or single query without transaction.
 func Exec(ctx context.Context, db *sqlx.DB, statements ...*Statement) error {
 	err := run(ctx, db, statements...)
+	fmt.Println(*&statements[0].query, &statements[0].args, err, "nidzam23")
 	if err != nil {
 		return err
 	}
@@ -24,6 +26,7 @@ func ExecTx(ctx context.Context, db *sqlx.DB, statements ...*Statement) error {
 	}
 
 	if err = runTx(ctx, tx, statements...); err != nil {
+		fmt.Println(*&statements[0].query, &statements[0].args, err, "nidzam23")
 		if er := tx.Rollback(); er != nil {
 			return er
 		}

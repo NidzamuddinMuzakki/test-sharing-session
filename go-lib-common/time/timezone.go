@@ -4,7 +4,7 @@ import (
 	"os"
 	"time"
 
-	"github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/constant"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/constant"
 )
 
 // LoadTimeZoneFromEnv load timezone from env

@@ -4,10 +4,10 @@ import (
 	"context"
 	"net/http"
 
-	commonError "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/errors"
-	"github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/logger"
-	"github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/registry"
-	responseModel "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/response/model"
+	commonError "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/errors"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/logger"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/registry"
+	responseModel "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/response/model"
 	"github.com/gin-gonic/gin"
 )
 

@@ -3,7 +3,7 @@ package health
 import (
 	"context"
 
-	"github.com/NidzamuddinMuzakki/test-sharing-session/model"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/model"
 
 	"github.com/jmoiron/sqlx"
 )

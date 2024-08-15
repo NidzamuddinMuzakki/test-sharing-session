@@ -3,8 +3,8 @@ package gin
 import (
 	"context"
 
-	"github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/constant"
-	"github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/logger"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/constant"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/logger"
 
 	"github.com/gin-gonic/gin"
 	"github.com/google/uuid"

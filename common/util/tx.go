@@ -1,12 +1,12 @@
-package data_source
+package util
 
 import (
 	"context"
 	"database/sql"
 	"fmt"
+	"log"
 	"runtime/debug"
 
-	"github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/logger"
 	"github.com/jmoiron/sqlx"
 )
 
@@ -14,7 +14,7 @@ type TransactionRunner struct {
 	DB *sqlx.DB
 }
 
-type TxFunc func(tx *sqlx.Tx) error
+type TxFunc func(tx *sqlx.Tx) (id int, err error)
 type TxOpt func(t *TransactionRunner)
 
 func SetDB(db *sqlx.DB) TxOpt {
@@ -29,35 +29,31 @@ func NewTransactionRunner(db *sqlx.DB) *TransactionRunner {
 	}
 }
 
-func (t *TransactionRunner) WithTx(ctx context.Context, txFunc TxFunc, opts *sql.TxOptions) (err error) {
+func (t *TransactionRunner) WithTx(ctx context.Context, txFunc TxFunc, opts *sql.TxOptions) (id int, err error) {
 	tx, err := StartTx(ctx, t.DB, opts)
 	if err != nil {
-		return err
+		return 0, err
 	}
 
 	defer func() {
-		if r := recover(); r != nil {
+		r := recover()
+		if r != nil {
+			log.Println(string(debug.Stack()))
+			mErr := fmt.Errorf("%v", r)
 			errRb := RollbackTx(tx)
 			if errRb != nil {
 				err = errRb
 			} else {
-				err = fmt.Errorf("panic occurred: %v", r)
+				err = mErr
 			}
-			logger.Error(ctx, "data_source.transaction.TransactionRunner.WithTx", err, logger.Tag{Key: "debug", Value: string(debug.Stack())})
-
+		} else {
+			err = CommitTx(tx)
 		}
+
 	}()
-
-	err = txFunc(tx)
-	if err != nil {
-		errRb := RollbackTx(tx)
-		if errRb != nil {
-			return errRb
-		}
-		return err
-	}
-
-	return CommitTx(tx)
+	ids, err := txFunc(tx)
+	PanicIfError(err)
+	return ids, nil
 }
 
 func StartTx(ctx context.Context, db *sqlx.DB, opts *sql.TxOptions) (*sqlx.Tx, error) {

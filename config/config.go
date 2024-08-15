@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	commonConfig "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/config"
+	commonConfig "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/config"
 
 	"github.com/spf13/viper"
 )

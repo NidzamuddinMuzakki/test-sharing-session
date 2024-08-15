@@ -1,7 +1,7 @@
 package errors
 
 import (
-	responseModel "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/response/model"
+	responseModel "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/response/model"
 	"github.com/pkg/errors"
 
 	"net/http"

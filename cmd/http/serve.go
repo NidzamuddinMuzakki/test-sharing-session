@@ -10,11 +10,11 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/NidzamuddinMuzakki/test-sharing-session/config"
-	delivery "github.com/NidzamuddinMuzakki/test-sharing-session/handler"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/config"
+	delivery "github.com/NidzamuddinMuzakki/test-sharing-vision/handler"
 
-	"github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/logger"
-	common "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/registry"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/logger"
+	common "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/registry"
 )
 
 type IServer interface {

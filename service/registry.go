@@ -1,7 +1,7 @@
 package service
 
 import (
-	"github.com/NidzamuddinMuzakki/test-sharing-session/service/health"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/service/health"
 )
 
 // @Notice: Register your services here

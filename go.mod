@@ -1,4 +1,4 @@
-module github.com/NidzamuddinMuzakki/test-sharing-session
+module github.com/NidzamuddinMuzakki/test-sharing-vision
 
 go 1.21.6
 
@@ -24,6 +24,7 @@ require (
 	github.com/fsnotify/fsnotify v1.7.0 // indirect
 	github.com/gabriel-vasile/mimetype v1.4.3 // indirect
 	github.com/gin-contrib/sse v0.1.0 // indirect
+	github.com/gin-gonic/contrib v0.0.0-20240508051311-c1c6bf0061b0 // indirect
 	github.com/gin-gonic/gin v1.10.0 // indirect
 	github.com/go-co-op/gocron v1.37.0 // indirect
 	github.com/go-logr/logr v1.4.1 // indirect

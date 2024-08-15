@@ -6,7 +6,7 @@ import (
 	"reflect"
 	"sync"
 
-	"github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/logger"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/logger"
 
 	"github.com/jmoiron/sqlx"
 	"github.com/pkg/errors"

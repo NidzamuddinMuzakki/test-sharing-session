@@ -7,10 +7,10 @@ import (
 	"net/http"
 	"runtime/debug"
 
-	"github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/logger"
-	responseModel "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/response/model"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/logger"
+	responseModel "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/response/model"
 
-	commonValidator "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/validator"
+	commonValidator "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/validator"
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
 )
@@ -111,6 +111,7 @@ func (p *MiddlewarePanicRecoveryPackage) PanicRecoveryMiddleware() gin.HandlerFu
 				c.AbortWithStatusJSON(
 					http.StatusInternalServerError,
 					responseModel.Response{
+						Data:    errors.New(errStr).Error(),
 						Status:  responseModel.StatusFail,
 						Message: responseMsg,
 					},

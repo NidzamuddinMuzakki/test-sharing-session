@@ -8,7 +8,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/registry"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/registry"
 )
 
 type err struct {

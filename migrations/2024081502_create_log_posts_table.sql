@@ -1,13 +1,13 @@
 -- +goose Up
 -- +goose StatementBegin
--- sharing-vision.posts definition
-CREATE TABLE IF NOT EXISTS `posts`
+-- sharing-vision.log_posts definition
+CREATE TABLE IF NOT EXISTS `log_posts`
 (
     `id` int unsigned NOT NULL AUTO_INCREMENT ,
-    `title`       varchar(200)  NOT NULL DEFAULT '',
-    `content`       TEXT NOT NULL DEFAULT '',
-    `category`varchar(100)  NOT NULL DEFAULT '',
-    `status` varchar(100) NOT NULL DEFAULT '',
+    `article_id` int NOT NULL DEFAULT 0,
+    `data_before` TEXT NULL,
+    `data_after` TEXT NULL,
+    `category_status`varchar(100)  NOT NULL DEFAULT '',
     `created_date` timestamp    NULL DEFAULT CURRENT_TIMESTAMP,
     `updated_date` timestamp    NULL DEFAULT NULL,
     PRIMARY KEY (`id`)
@@ -17,5 +17,5 @@ CREATE TABLE IF NOT EXISTS `posts`
 
 -- +goose Down
 -- +goose StatementBegin
-DROP TABLE `posts`;
+DROP TABLE `log_posts`;
 -- +goose StatementEnd

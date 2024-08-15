@@ -1,7 +1,7 @@
 package handler
 
 import (
-	"github.com/NidzamuddinMuzakki/test-sharing-session/handler/health"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/handler/health"
 )
 
 // @Notice: Register your http deliveries here

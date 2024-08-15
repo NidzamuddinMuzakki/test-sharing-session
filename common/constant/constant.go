@@ -17,22 +17,7 @@ const (
 )
 
 const (
-	KtpKawin      = "kawin"
-	KtpBelumKawin = "belum kawin"
-	KtpCeraiHidup = "cerai hidup"
-	KtpCeraiMati  = "cerai mati"
-
-	EmployeeKawin      = "Sudah Menikah"
-	EmployeeBelumKawin = "Belum Menikah"
-	EmployeeCerai      = "Cerai"
-)
-
-const (
-	SudahMenikahCode = 7
-	BelumMenikahCode = 8
-	CeraiCode        = 9
-
-	SudahMenikah = "Sudah Menikah"
-	BelumMenikah = "Belum Menikah"
-	Cerai        = "Cerai"
+	StatusPublish = "publish"
+	StatusDraft   = "draft"
+	StatusThrash  = "thrash"
 )

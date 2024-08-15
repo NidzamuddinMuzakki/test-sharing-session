@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/constant"
-	commonTime "github.com/NidzamuddinMuzakki/test-sharing-session/go-lib-common/time"
+	"github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/constant"
+	commonTime "github.com/NidzamuddinMuzakki/test-sharing-vision/go-lib-common/time"
 
 	"github.com/go-co-op/gocron"
 	"github.com/spf13/viper"
